@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="libs/js/bootstrap.min.js"></script>
+    <link href="libs/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="libs/css/style.css" media="screen"/>
+    <script src="libs/js/login.js"></script>
+
+</head>
+<body>
+
+    <input name="teste" type="radio">Login
+
+    <div class="login-reg-panel">
+		<div class="login-info-box">
+			<h3>Não tenho uma conta?</h3>
+			<p>________________</p>
+			<label id="label-register" for="log-reg-show">Login</label>
+			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+		</div>
+							
+		<div class="register-info-box">
+			<h3>Você ainda não é cadastrado?</h3>
+			<p>________________</p>
+			<label id="label-login" for="log-login-show">Register</label>
+			<input type="radio" name="active-log-panel" id="log-login-show">
+		</div>
+							
+		<div class="white-panel">
+			<div class="login-show">
+				<h2>LOGIN</h2>
+				<input type="text" placeholder="E-mail">
+				<input type="password" placeholder="Senha">
+				<input type="button" value="Entrar">
+				<a href="">Esqueceu a senha ?</a>
+			</div>
+			<div class="register-show">
+				<h2>REGISTRE-SE</h2>
+				<input type="text" placeholder="E-mail">
+				<input type="password" placeholder="Senha">
+				<input type="password" placeholder="Confirme a senha">
+				<input type="button" value="Salvar">
+			</div>
+		</div>
+    </div>
+
+</body>
+</html>
