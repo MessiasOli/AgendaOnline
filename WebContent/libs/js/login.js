@@ -2,8 +2,6 @@
 $(document).ready(function(){
         $('.login-info-box').fadeOut();
         $('.login-show').addClass('show-log-panel');
-
-    
     
     $('.login-reg-panel input[type="radio"]').on('change', function() {
         if($('#log-login-show').is(':checked')) {
@@ -24,6 +22,11 @@ $(document).ready(function(){
             $('.login-show').addClass('show-log-panel');
             $('.register-show').removeClass('show-log-panel');
         }
+    });
+
+    $(".submit").click(function(){
+        console.log("Submetido");
+        $("form").first().submit();
     });
 
 });
