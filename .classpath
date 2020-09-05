@@ -13,5 +13,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink 2.5.2">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="owner.project.facets" value="jpt.jpa"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/HSQLDB JDBC Driver"/>
+	<classpathentry kind="lib" path="G:/Downloads/hibernate-release-4.1.9.Final/hibernate-release-4.1.9.Final/lib/jpa/hibernate-entitymanager-4.1.9.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
