@@ -1,7 +1,7 @@
-package org.AgendaOnline.controller;
+package org.AgendaOnline.model.controller;
 
-import org.AgendaOnline.User;
-import org.AgendaOnline.repository.UserRepository;
+import org.AgendaOnline.model.User;
+import org.AgendaOnline.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package org.AgendaOnline;
+package org.AgendaOnline.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

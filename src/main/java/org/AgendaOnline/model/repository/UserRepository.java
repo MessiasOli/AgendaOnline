@@ -1,11 +1,11 @@
-package org.AgendaOnline.repository;
+package org.AgendaOnline.model.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.AgendaOnline.User;
+import org.AgendaOnline.model.User;
 import org.springframework.stereotype.Repository;
 
 @Repository

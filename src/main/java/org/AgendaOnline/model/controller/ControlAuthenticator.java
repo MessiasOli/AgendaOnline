@@ -1,9 +1,9 @@
-package org.AgendaOnline.controller;
+package org.AgendaOnline.model.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.AgendaOnline.User;
-import org.AgendaOnline.repository.UserRepository;
+import org.AgendaOnline.model.User;
+import org.AgendaOnline.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ public class ControlAuthenticator {
 	@RequestMapping(value="autenticar", method=RequestMethod.POST)
 	public String authenticator(User user, HttpSession sessao) {
 		if(userRepository.userAuthentic(user)) {
-			sessao.setAttribute("Usuer", user);
+			sessao.setAttribute("user", user);
 			return "main";
 		}
 			return "redirect:login";
