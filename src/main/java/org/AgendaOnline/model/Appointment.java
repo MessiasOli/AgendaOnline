@@ -1,8 +1,19 @@
 package org.AgendaOnline.model;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import org.AgendaOnline.dto.AppointmentDto;
+import org.springframework.transaction.annotation.Transactional;
 
 @Entity
 public class Appointment {
@@ -12,13 +23,37 @@ public class Appointment {
 	private int id;
 	private String description;
 	private String local;
-	private String date;
-	private String hour;
-	private String address;
-	private String number;
-	private String city;
-	private String state;
-	private String zip;
+	@Column(name = "date")
+	private java.sql.Timestamp date;
+	@ManyToOne
+	private User user;
+	@OneToOne
+	private Contact contact;
+	
+
+	public Timestamp getDate() {
+		return date;
+	}
+
+	public void setDate(Timestamp date) {
+		this.date = date;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
 
 	public int getId() {
 		return id;
@@ -43,61 +78,21 @@ public class Appointment {
 	public void setLocal(String local) {
 		this.local = local;
 	}
-
-	public String getDate() {
-		return date;
+	
+	@Transient
+	private SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public void clone(AppointmentDto appoint) {
+		
+		this.id = appoint.getId();
+		this.description = appoint.getDescription();
+		this.local = appoint.getLocal();
+		
+		System.out.println(appoint.getFormatDate());
+		try {
+			this.date = new Timestamp(DATE_TIME_FORMAT.parse(appoint.getFormatDate() + " " + appoint.getFormatHour() + ":00").getTime());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public String getHour() {
-		return hour;
-	}
-
-	public void setHour(String hour) {
-		this.hour = hour;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-
 }
