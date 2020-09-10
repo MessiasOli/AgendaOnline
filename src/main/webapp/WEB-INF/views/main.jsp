@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Agenda Online</title>
-<link rel="icon" href="../../img/iconfinder_Apple_Reminders_2697653.ico">
+<link rel="icon" href="<c:url value=" resources/img/iconfinder_Apple_Reminders_2697653.ico" />">
 
 <script src="<c:url value=" resources/jquery/jquery.min.js" />"
 	charset="UTF-8"></script>
@@ -42,9 +42,9 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="commitment">Adcionar</a>
+							<a class="dropdown-item" href="appointment">Adicionar</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="listCommitement">Listar</a>
+							<a class="dropdown-item" href="listingAppointments">Listar</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" role="button"
@@ -55,9 +55,9 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="contacts.html">Adcionar</a>
+							<a class="dropdown-item" href=contacts >Adicionar</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="listContacts.html">Listar</a>
+							<a class="dropdown-item" href=listingContacts >Listar</a>
 						</div></li>
 				</ul>
 			</div>
@@ -72,13 +72,13 @@
 				</button>
 			</form>
 		</div>
-		<div class="col col-lg-1" style="padding-right: 0; padding-left: 0;">
+		<div class="col col-lg-2" style="padding-right: 0; padding-left: 0;">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Olá ${user.getName()}</a>
+						aria-expanded="false">OlÃ¡ ${user.name}</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#">Editar</a>
@@ -90,6 +90,7 @@
 		</div>
 	</nav>
 	<!--/Navigation -->
+	
 	<div id='wrap'>
 		<div id='calendar'></div>
 		<div style='clear: both'></div>

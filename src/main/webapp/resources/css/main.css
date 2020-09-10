@@ -2,19 +2,15 @@ body {
 	font-family: 'Mukta', sans-serif;
 	height: 100vh;
 	margin-top: 0px;
-	min-height: 550px;
-	background-repeat: no-repeat;
+	margin-right: 0px; 	
 	background-size: cover;
 	background-position: center;
 	position: relative;
 	overflow-y: hidden;
+	bottom: 0;
+    left: 0;
 }
 
-.welcome {
-	font-family: "Open Sans", sans-serif;
-	font-size: 22px !important;
-	padding-left: 500px;
-}
 
 td.fc-day {
 	background: #fff !important;

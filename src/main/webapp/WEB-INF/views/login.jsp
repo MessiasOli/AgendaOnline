@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Login</title>
 
 <script src="<c:url value=" resources/jquery/jquery.min.js" />" charset="UTF-8"></script>
@@ -22,7 +22,7 @@
 
 	<div class="login-reg-panel">
 		<div class="login-info-box">
-			<h3>Não tenho uma conta?</h3>
+			<h3>NÃ£o tenho uma conta?</h3>
 			<p>________________</p>
 			<label id="label-register" for="log-reg-show">Login</label> <input
 				type="radio" name="active-log-panel" id="log-reg-show"
@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="register-info-box">
-			<h3>Você ainda não é cadastrado?</h3>
+			<h3>VocÃª ainda nÃ£o Ã© cadastrado?</h3>
 			<p>________________</p>
 			<label id="label-login" for="log-login-show">Registre-se</label> <input
 				type="radio" name="active-log-panel" id="log-login-show">

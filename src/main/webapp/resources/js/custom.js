@@ -18,5 +18,7 @@ $(document).ready(function(){
 $(function(){
     $("#phone").mask("(99) 9 9999-9999",{placeholder:"(xx) x xxxx-xxxx"});
     $("#zip").mask("99999-999",{placeholder:""});
+	//$("#date").mask("99/99/9999",{placeholder:"dd/mm/aaaa"});
+	//$("#hour").mask("99:99:99",{placeholder:"HH:MM:ss"});
 });
 

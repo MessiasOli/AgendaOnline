@@ -22,17 +22,31 @@ public class ControlAuthenticator {
 	
 	@RequestMapping("login")
 	public String loginForm() {
+		try {
 		return "login";
+		}catch (Exception e){
+			return "login";
+		}
 	}
 	
 	@Transactional
 	@RequestMapping(value="autenticar", method=RequestMethod.POST)
 	public String authenticator(User user, HttpSession sessao) {
-		if(userRepository.userAuthentic(user)) {
+		user = userRepository.userAuthentic(user);
+		if(user != null) { 
 			sessao.setAttribute("user", user);
-			return "main";
+			return "redirect:main";
 		}
 			return "redirect:login";
+	}
+	
+	@RequestMapping(value="main")
+	public String goMain(HttpSession sessao) {
+		if(sessao.getAttribute("user") != null) {
+		return "main";
+		}else 
+			return "redirect:logout";
+		
 	}
 	
 	@RequestMapping("logout")

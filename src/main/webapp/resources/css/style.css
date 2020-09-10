@@ -1,13 +1,19 @@
 body {
 	font-family: 'Mukta', sans-serif;
 	height: 100vh;
-	min-height: 550px;
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
 	position: relative;
 	overflow-y: hidden;
+	background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
 }
+
+
 
 .btn-custom {
 	padding: 1px 15px 3px 2px;
@@ -39,9 +45,9 @@ a {
 
 .white-panel {
 	background-color: rgba(255, 255, 255, 1);
-	height: 700px;
+	height: 570px;
 	position: absolute;
-	top: -75px;
+	top: -80px;
 	width: 50%;
 	right: calc(50% - 50px);
 	transition: .3s ease-in-out;
