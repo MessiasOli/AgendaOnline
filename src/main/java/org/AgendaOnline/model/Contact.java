@@ -2,6 +2,7 @@ package org.AgendaOnline.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 
 @Entity
@@ -9,7 +10,7 @@ public class Contact {
 	
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	private String name;
 	private String surname;
 	private String email;
@@ -19,13 +20,23 @@ public class Contact {
 	private String city;
 	private String state;
 	private String zip;
+	@OneToOne
+	private User user;
 
-	public int getId() {
-		return id;
+	public User getUser() {
+		return user;
 	}
 
-	public void setId(int id) {
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 	public String getName() {
