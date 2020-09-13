@@ -21,12 +21,14 @@ public class AppointmentRepository {
 	}
 	
 	public List<Appointment> listAppointments(User user) {
-		TypedQuery<Appointment> query = manager.createQuery("Select c from Appointment c Where c.user = " + user.getId(), Appointment.class);
+		TypedQuery<Appointment> query = manager.createQuery("Select c from Appointment c Where c.user = " + user.getId()
+				+ "order by c.description asc"
+				, Appointment.class);
 		return query.getResultList();
 	}
 	
-	public void delete(Appointment appointment) {
-		manager.remove(appointment);
+	public void delete(int id) {
+		manager.remove(find(id));
 	}
 	
 	public Appointment find(int id) {

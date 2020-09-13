@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Appointment {
 	private java.sql.Timestamp date;
 	@ManyToOne
 	private User user;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.REMOVE)
 	private Contact contact;
 	
 
@@ -83,7 +84,6 @@ public class Appointment {
 	private SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public void clone(AppointmentDto appoint) {
 		
-		this.id = appoint.getId();
 		this.description = appoint.getDescription();
 		this.local = appoint.getLocal();
 		
@@ -91,7 +91,6 @@ public class Appointment {
 		try {
 			this.date = new Timestamp(DATE_TIME_FORMAT.parse(appoint.getFormatDate() + " " + appoint.getFormatHour() + ":00").getTime());
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

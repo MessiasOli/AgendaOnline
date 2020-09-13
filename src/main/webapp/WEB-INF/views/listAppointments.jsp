@@ -53,30 +53,30 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="contacts.html">Adicionar</a>
+							<a class="dropdown-item" href=contacts >Adicionar</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="listingContacts.html">Listar</a>
+							<a class="dropdown-item" href=listingContacts >Listar</a>
 						</div></li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-auto">
-			<form class="form-inline">
+			<form class="form-inline" action="shearch" method="post">
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Procurar" aria-label="Search">
+					placeholder="Procurar" name="str" aria-label="Search">
 				<button class="btn btn-outline-light" type="submit">
 					<img
 						src="<c:url value=" resources/img/icons8_search_20px_1.png" />">
 				</button>
 			</form>
 		</div>
-		<div class="col col-lg-1" style="padding-right: 0; padding-left: 0;">
+		<div class="col col-lg-2" style="padding-right: 0; padding-left: 0;">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Olá ${userName}</a>
+						aria-expanded="false">Olá ${user.name}</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#">Editar</a>
@@ -90,28 +90,32 @@
 	<!--/Navigation -->
 
 	<div class="container" style="margin-top: 40px;">
-		<table class="table table-sm table-dark">
-			<thead>
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Descrição</th>
-					<th scope="col">Local</th>
-					<th scope="col">Data</th>
-					<th scope="col">Contato</th>
-				</tr>
-			</thead>
-			<c:forEach var="appointment" items="${appointments}">
-				<tr>
-					<th scope="row">${appointment.id}</th>
-					<td>${appointment.description}</td> 
-					<td>${appointment.local}</td>
-					<td>${appointment.date}</td>
-					<td>${appointment.contact.name} ${appointment.contact.surname}</td>
-				</tr>
-			</c:forEach>
-		</table>
+		<form action="editOrDeleteAppointment" method="post">
+			<table class="table table-sm table-dark">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Descrição</th>
+						<th scope="col">Local</th>
+						<th scope="col">Data</th>
+						<th scope="col">Contato</th>
+					</tr>
+				</thead>
+				<c:forEach var="appointment" items="${appointments}">
+					<tr>
+						<th scope="row">
+						<a href=editAppointment?id=${appointment.id}><img style="cursor: pointer;" name="edit" src="<c:url value="resources/img/icons8_edit_20px.png" />"></a> 
+						<a href=deleteAppointment?id=${appointment.id}> <img style="cursor: pointer;" src="<c:url value="resources/img/icons8_trash_20px.png" />"></a>
+						</th>
+						<td>${appointment.description}</td> 
+						<td>${appointment.local}</td>
+						<td>${appointment.date}</td>
+						<td>${appointment.contact.name} ${appointment.contact.surname}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</form>
 	</div>
-
 </body>
 
 </html>

@@ -3,6 +3,7 @@ $(document).ready(function() {
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
+	var appointments = document.getElementsByName('appointments')[0].content;	
     /*  className colors
       
     className: default(transparent), important(red), chill(pink), success(green), info(blue)
@@ -83,11 +84,12 @@ $(document).ready(function() {
           $(this).remove();
         }
       },
+	
       events: [
         {
           id: 999,
-          title: 'Primeiro Evento',
-          start: new Date(y, m, d + 1, 18, 0),
+          title: 'Eu ia colocar os compromissos aqui mas faltou tempo. Fica pra próxima',
+          start: new Date(y, m, d, 18, 0),
           allDay: false,
           className: 'info'
         }

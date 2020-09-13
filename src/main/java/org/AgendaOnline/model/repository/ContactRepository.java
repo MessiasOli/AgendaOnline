@@ -21,12 +21,14 @@ public class ContactRepository {
 	}
 	
 	public List<Contact> listContacts(User user) {
-		TypedQuery<Contact> query = manager.createQuery("Select c from Contact c Where c.user = " + user.getId(), Contact.class);
+		TypedQuery<Contact> query = manager.createQuery("Select c from Contact c Where c.user = " + user.getId()
+		+ "order by c.name asc"
+		, Contact.class);
 		return query.getResultList();
 	}
 	
-	public void delete(Contact contact) {
-		manager.remove(contact);
+	public void delete(int id) {
+		manager.remove(find(id));
 	}
 	
 	public Contact find(int id) {

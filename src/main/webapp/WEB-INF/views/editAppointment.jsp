@@ -23,7 +23,7 @@
 <body>
 <body style="background-image: url(resources/img/natural.jpg)">
 
-		<!-- Navigation -->
+	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="col">
 			<div class="collapse navbar-collapse" id="navbarNav">
@@ -93,20 +93,23 @@
 		<div style="padding-top: 10px;">
 			<h3>Cadastro de Compromisso</h3>
 		</div>
-		<form method="post" action="registeringAppointment" >
+		<form method="post" action="updateAppointment" >
 			<div class="form-group">
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="name">Descrição*</label> 
-						<input type="text" class="form-control" name="description">
+						<input type="hidden" class="form-control" name="id" value="${appointment.id}">
+						<input type="text" class="form-control" name="description" value="${appointment.description}">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="inputState">Contato*</label> 
 						<select name="contactId" class="form-control">
-							<option value="">Selecione</option>
+							<option value="${appointment.contact.id}" >${appointment.contact.name} ${appointment.contact.surname}</option>
 	 						
 			 	 			<c:forEach var="contact" items="${contacts}">
-								<option value="${contact.id}" >${contact.name} ${contact.surname}</option>
+			 	 				<c:if test="${contact.id != appointment.contact.id}" >
+			 	 					<option value="${contact.id}" >${contact.name} ${contact.surname}</option>
+			 	 				</c:if>
 							</c:forEach>
 		 							
 						</select>
@@ -116,18 +119,18 @@
 			<div class="form-row">
 				<div class="form-group col-md-7">
 					<label for="local">Local*</label> 
-					<input type="text" class="form-control" name="local" id="local">
+					<input type="text" class="form-control" name="local" id="local" value="${appointment.local}">
 				</div>
 	 			<div class="form-group col-md-3">
 					<label for="date">Data*</label> 
-					<input type="date" class="form-control" name="formatDate" id="date">
+					<input type="date" class="form-control" name="formatDate" id="date" value="${date}">
 				</div>
 				<div class="form-group col-md-2">
 					<label for="hour">Hora*</label> 
-					<input type="time" class="form-control" name="formatHour" id="hour">
+					<input type="time" class="form-control" name="formatHour" id="hour"  value="${time}">
 				</div>
 			</div>
-			<button type="submit" class="btn btn-dark" style="margin-bottom: 10px;">Cadastrar</button>
+			<button type="submit" class="btn btn-dark" style="margin-bottom: 10px;">Salvar</button>
 		</form>
 	</div>
 </body>
