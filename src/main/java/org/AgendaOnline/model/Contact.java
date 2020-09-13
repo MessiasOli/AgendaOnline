@@ -114,5 +114,19 @@ public class Contact {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
-
+	
+	public void clone(Contact contact)
+	{
+		this.name = contact.name;
+		this.surname = contact.surname;
+		this.email = contact.email;
+		this.phone = contact.phone;
+		this.address = contact.address;
+		this.number = contact.number;
+		this.city = contact.city;
+		this.state = contact.state;
+		this.zip = contact.zip;
+		this.user = contact.user;
+	}
+	
 }

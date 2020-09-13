@@ -9,12 +9,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agenda Contatos</title>
-<link rel="icon" href="../../img/iconfinder_Apple_Reminders_2697653.ico">
 
+<link rel="icon" href="<c:url value=" resources/iconfinder_Apple_Reminders_2697653.ico" />"/>
 <script src="<c:url value=" resources/jquery/jquery.min.js" />" charset="UTF-8"></script>
 <script	src="<c:url value=" https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js" />"></script>
 <script src="<c:url value=" resources/js/bootstrap.min.js" />" charset="UTF-8"></script>
-<link href="<c:url value=" resources/css/bootstrap.min.css" />" rel="stylesheet" id="bootstrap-css">
+<link href="<c:url value=" resources/css/bootstrap.min.css" />" rel="stylesheet" id="bootstrap-css" />
 <link rel="stylesheet" type="text/css" href="<c:url value=" resources/css/main.css" />" media="screen" />
 <link rel="stylesheet" type="text/css"	href="<c:url value=" resources/css/calendar.css" />" media="screen" />
 <script src="<c:url value=" resources/js/main.js" />" charset="UTF-8"></script>
@@ -89,38 +89,91 @@
 	</nav>
 	<!--/Navigation -->
 
-	<div class="container" style="margin-top: 40px;">
-		<form action="editOrDeleteContact" method="post">
-			<table class="table table-sm table-dark">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Nome</th>
-						<th scope="col">Telefone</th>
-						<th scope="col">Endereço</th>
-						<th scope="col">Cep</th>
-						<th scope="col">Cidade</th>
-					</tr>
-				</thead>
-				<tbody>
-				
-				<c:forEach var="contact" items="${contacts}">
-					<tr>
-						<th scope="row">
-						<a href=editContact?id=${contact.id}><img style="cursor: pointer;" name="edit" src="<c:url value="resources/img/icons8_edit_20px.png" />"></a> 
-						<a href=deleteContact?id=${contact.id}> <img style="cursor: pointer;" src="<c:url value="resources/img/icons8_trash_20px.png" />"></a>
-						</th>
-						<td>${contact.name} ${contact.surname}</td>
-						<td>${contact.phone}</td>
-						<td>${contact.address} , ${contact.number}</td>
-						<td>${contact.zip}</td>
-						<td>${contact.city}-${contact.state}</td>
-					</tr>
-				</c:forEach>
-				</tbody>
-			</table>
+	
+	<div class="container mt-3 h-75" style="background: rgba(255, 255, 255, 0.95); border-radius: 10px;">
+		<div style="padding-top: 10px;">
+			<h3>Cadastro de Contatos</h3>
+		</div>
+		<form method=post action=updateContact>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="name">Nome*</label>
+					<input type="hidden" name="id" class="form-control" value="${contact.id}"> 
+					<input type="text" name="name" class="form-control" id="name" value="${contact.name}">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="surname">Sobrenome</label> 
+					<input type="text" name="surname" class="form-control" id="surname" value="${contact.surname}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="email">E-mail*</label> 
+					<input type="email" name="email" class="form-control" id="email" value="${contact.email}">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="phone">Telefone*</label> 
+					<input type="text" name="phone" class="form-control" id="phone" value="${contact.phone}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col">
+					<label for="inputAddress2">Endereço</label> 
+					<input type="text" class="form-control" name="address" id="inputAddress" value="${contact.address}">
+				</div>
+				<div class="form-group col-md-2">
+					<label for="number">Número</label> 
+					<input type="text" name="number" class="form-control" id="number" value="${contact.number}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputCity">Cidade</label> 
+					<input type="text" name="city" class="form-control" id="inputCity" value="${contact.city}">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputState">Estado</label> 
+					<select id="inputState" name="state" class="form-control">
+						<option value="${contact.state}">${contact.state}</option>
+						<option value="AC">Acre</option>
+						<option value="AL">Alagoas</option>
+						<option value="AP">Amapá</option>
+						<option value="AM">Amazonas</option>
+						<option value="BA">Bahia</option>
+						<option value="CE">Ceará¡</option>
+						<option value="DF">Distrito Federal</option>
+						<option value="ES">Espírito Santo</option>
+						<option value="GO">Goias</option>
+						<option value="MA">Maranhão</option>
+						<option value="MT">Mato Grosso</option>
+						<option value="MS">Mato Grosso do Sul</option>
+						<option value="MG">Minas Gerais</option>
+						<option value="PA">Pará</option>
+						<option value="PB">Paraíba</option>
+						<option value="PR">Paraná</option>
+						<option value="PE">Pernambuco</option>
+						<option value="PI">Piaí­</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="RN">Rio Grande do Norte</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="RO">Rondônia</option>
+						<option value="RR">Roraima</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="SP">São Paulo</option>
+						<option value="SE">Sergipe</option>
+						<option value="TO">Tocantins</option>
+					</select>
+				</div>
+				<div class="form-group col-md-2">
+					<label for="zip">Cep</label> 
+					<input id="zip" type="text" name="zip" class="form-control" value="${contact.zip}">
+				</div>
+			</div>
+			<div class="form-group"></div>
+			<button type="submit" class="btn btn-dark">Salvar</button>
 		</form>
 	</div>
+
 
 </body>
 

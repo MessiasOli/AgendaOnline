@@ -23,6 +23,7 @@
 </head>
 
 <body style="background-image: url(resources/img/natural.jpg)">
+
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="col">
@@ -53,30 +54,30 @@
 					</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="contacts.html">Adicionar</a>
+							<a class="dropdown-item" href=contacts >Adicionar</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="listContacts.html">Listar</a>
+							<a class="dropdown-item" href=listingContacts >Listar</a>
 						</div></li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-auto">
-			<form class="form-inline">
+			<form class="form-inline" action="shearch" method="post">
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Procurar" aria-label="Search">
+					placeholder="Procurar" name="str" aria-label="Search">
 				<button class="btn btn-outline-light" type="submit">
 					<img
 						src="<c:url value=" resources/img/icons8_search_20px_1.png" />">
 				</button>
 			</form>
 		</div>
-		<div class="col col-lg-1" style="padding-right: 0; padding-left: 0;">
+		<div class="col col-lg-2" style="padding-right: 0; padding-left: 0;">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Olá ${userName}</a>
+						aria-expanded="false">Olá ${user.name}</a>
 						<div class="dropdown-menu dropdown-menu-right"
 							aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#">Editar</a>
@@ -87,6 +88,7 @@
 			</div>
 		</div>
 	</nav>
+	<!--/Navigation -->
 
 	
 	<div class="container mt-3 h-75" style="background: rgba(255, 255, 255, 0.95); border-radius: 10px;">
