@@ -21,6 +21,7 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value=" resources/css/calendar.css" />" media="screen" />
 <script src="<c:url value=" resources/js/main.js" />" charset="UTF-8"></script>
+<meta name="appointments" content="$<appontiments>">
 <script src="<c:url value=" resources/js/start.js" />" charset="UTF-8"></script>
 </head>
 
@@ -63,9 +64,9 @@
 			</div>
 		</div>
 		<div class="col-md-auto">
-			<form class="form-inline">
+			<form class="form-inline" action="shearch" method="post">
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Procurar" aria-label="Search">
+					placeholder="Procurar" name="str" aria-label="Search">
 				<button class="btn btn-outline-light" type="submit">
 					<img
 						src="<c:url value=" resources/img/icons8_search_20px_1.png" />">

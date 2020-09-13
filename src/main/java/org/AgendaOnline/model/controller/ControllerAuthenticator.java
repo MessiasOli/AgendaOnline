@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ControlAuthenticator {
+public class ControllerAuthenticator {
 
 	private UserRepository userRepository;
 	
 	@Autowired
-	public ControlAuthenticator(UserRepository userRepository) {
+	public ControllerAuthenticator(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 	

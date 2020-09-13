@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@ComponentScan(basePackageClasses= {RegisterUser.class, UserRepository.class})
-public class RegisterUser {
+@ComponentScan(basePackageClasses= {ControllerUser.class, UserRepository.class})
+public class ControllerUser {
 	
 	private UserRepository userRepository;
 	
 	@Autowired
-	public RegisterUser(UserRepository userRepository) {
+	public ControllerUser(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
