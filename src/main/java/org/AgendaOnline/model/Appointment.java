@@ -28,7 +28,7 @@ public class Appointment {
 	private java.sql.Timestamp date;
 	@ManyToOne
 	private User user;
-	@OneToOne(cascade=CascadeType.REMOVE)
+	@OneToOne(orphanRemoval=true)
 	private Contact contact;
 	
 
